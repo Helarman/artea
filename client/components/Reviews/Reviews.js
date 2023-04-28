@@ -18,10 +18,6 @@ const Quotes = () => {
 
 const Reviews = ({ Reviews }) => {
 
-    const firstReview = Reviews.reviewCard1;
-    const secondReview = Reviews.reviewCard2;
-    const thirdReview = Reviews.reviewCard3;
-
     return (
         <div>
             <div className={`container`}>
@@ -30,51 +26,18 @@ const Reviews = ({ Reviews }) => {
                         <p>Отзывы</p>
                     </div>
 
-
-                    <div className={`col-xl-4 col-lg-4`}>
-                        <div className={styles.reviewCard}>
-                            <img src="http://localhost:1337/uploads/1620868329_30_oir_mobi_p_milie_kapibari_zhivotnie_krasivo_foto_31_b6bb91ebce.jpg" alt="avatar-1"></img>
-                            <div className={styles.reviewText}>
-                                <p>
-                                    <Quotes className={styles.quotes} />
-                                    {firstReview.text}
-                                </p>
-                                <div className={styles.reviewLine}></div>
-                                <h5 className={styles.reviewName}>{firstReview.Name} {firstReview.Lastname}</h5>
-                                <h6>{firstReview.Company}</h6>
+                    {Reviews.map(({ id, attributes}) => (
+                        <div key={id} className={`col-xl-4 col-lg-4`}>
+                            <div className={styles.reviewCard}>
+                                <div className={styles.reviewText}>
+                                    <p> <Quotes className={styles.quotes} />    {attributes.text}
+                                    </p>    
+                                    <div className={styles.reviewLine}></div>
+                                    <h5 className={styles.reviewName}>{attributes.name}</h5>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className={`col-xl-4 col-lg-4`}>
-                        <div className={styles.reviewCard}>
-                            <img src="http://localhost:1337/uploads/1620868329_30_oir_mobi_p_milie_kapibari_zhivotnie_krasivo_foto_31_b6bb91ebce.jpg" alt="avatar-1"></img>
-                            <div className={styles.reviewText}>
-                                <p>
-                                    <Quotes className={styles.quotes} />
-                                    {secondReview.text}
-                                </p>
-                                <div className={styles.reviewLine}></div>
-                                <h5 className={styles.reviewName}>{secondReview.Name} {secondReview.Lastname}</h5>
-                                <h6>{secondReview.Company}</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={`col-xl-4 col-lg-4`}>
-                        <div className={styles.reviewCard}>
-                            <img src="http://localhost:1337/uploads/1620868329_30_oir_mobi_p_milie_kapibari_zhivotnie_krasivo_foto_31_b6bb91ebce.jpg" alt="avatar-1"></img>
-                            <div className={styles.reviewText}>
-                                <p>
-                                    <Quotes className={styles.quotes} />
-                                    {thirdReview.text}
-                                </p>
-                                <div className={styles.reviewLine}></div>
-                                <h5 className={styles.reviewName}>{thirdReview.Name} {thirdReview.Lastname}</h5>
-                                <h6 className={styles.reviewCompany}>{thirdReview.Company}</h6>
-                            </div>
-                        </div>
-                    </div>
+                     ))}
                 </div>
             </div>
         </div>
