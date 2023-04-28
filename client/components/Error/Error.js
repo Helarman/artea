@@ -25,6 +25,6 @@ const Error = ({ errorCode, errorName, errorText }) => {
             </div>
         </div>
     )
-}
+};
 
 export default Error;
