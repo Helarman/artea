@@ -1,0 +1,65 @@
+.errorHeader {
+    text-align: center;
+    margin-top: 10%;
+
+    h2 {
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 102px;
+        line-height: 118px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+}
+
+.errorUnderheader {
+    text-align: center;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+        color: #6A6A6A;
+
+    }
+}
+
+.errorMessage {
+    text-align: center;
+    margin-top: 20px;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 125.1%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #2A2A2A;
+    }
+}
+
+.errorBtn {
+    text-align: center;
+    margin-top: 20px;
+
+    button {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 130%;
+        color: #FFFFFF;
+        padding: 17px 44px;
+        background-color: #2a2a2a;
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: white;
+            color: #2a2a2a;
+
+        }
+    }
+}

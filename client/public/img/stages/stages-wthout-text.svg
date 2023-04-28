@@ -1,0 +1,15 @@
+<svg width="1440" height="409" viewBox="0 0 1440 409" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="336.5" cy="16.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="708.5" cy="16.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="1094.5" cy="16.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="925.5" cy="205.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="517.5" cy="205.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="336.5" cy="392.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="710.5" cy="392.5" r="16.5" fill="#2A2A2A"/>
+<circle cx="1095.5" cy="392.5" r="16.5" fill="#2A2A2A"/>
+<line x1="329" y1="18" x2="1133" y2="17.9999" stroke="#2A2A2A" stroke-width="10"/>
+<line x1="307" y1="392" x2="1111" y2="392" stroke="#2A2A2A" stroke-width="10"/>
+<line x1="307" y1="205" x2="1133" y2="205" stroke="#2A2A2A" stroke-width="10"/>
+<path d="M1131.5 17.9999V17.9999C1246.86 28.3603 1247.11 197.969 1131.5 205V205" stroke="#2A2A2A" stroke-width="10"/>
+<path d="M307.5 205V205C192.142 215.36 191.892 384.969 307.5 392V392" stroke="#2A2A2A" stroke-width="10"/>
+</svg>

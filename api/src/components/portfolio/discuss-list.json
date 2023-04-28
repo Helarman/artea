@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_portfolio_discuss_lists",
+  "info": {
+    "displayName": "Discuss List"
+  },
+  "options": {},
+  "attributes": {
+    "discussList": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,313 @@
+@font-face {
+    font-family: "FuturaBookC";
+    src: url("../../src/fonts/FuturaBookC.woff") format("woff"), url("../../src/fonts/FuturaBookC.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FuturaMediumC";
+    src: url("../../src/fonts/FuturaMediumC.woff") format("woff"), url("../../src/fonts/FuturaMediumC.eot") format("eot");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.headerMain {
+    min-height: 50vh;
+    position: relative;
+}
+
+//запрет скрола для мобильного меню
+.burgerBodySettings {
+    overflow: hidden;
+}
+
+.logo {
+    display: inline-block;
+    margin-left: 4rem;
+    margin-top: 37px;
+    margin-bottom: 37px;
+    color: white; //убрать после замены лого
+}
+
+.menu {
+    display: inline-block;
+    margin-right: 4rem;
+    margin-top: 52px;
+    margin-bottom: 52px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.14em;
+    font-size: 18px;
+    text-decoration: none;
+
+    ul {
+        a {
+            font-family: FuturaMediumC, 'roboto', sans-serif;
+            text-decoration: none;
+            margin-left: 2.1rem;
+            color: white;
+            transition: all 0.5s;
+
+            &:hover {
+                color: #6a6a6a;
+            }
+        }
+    }
+}
+
+.burgerBtn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+
+    span {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        left: 5px;
+        transition: transform .5s, opacity .5s;
+
+        &:nth-child(1) {
+            transform: translateY(-10px);
+        }
+
+        &:nth-child(3) {
+            transform: translateY(10px);
+        }
+    }
+}
+
+.header.open .burgerBtn {
+    span {
+        &:nth-child(1) {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+}
+
+.fpage {
+    min-height: 100vh;
+    position: relative;
+    background: url(../../public/img/bg.png) center center no-repeat;
+    background-size: cover;
+}
+
+.spage {
+    background-color: #2a2a2a;
+    padding-bottom: 37px;
+}
+
+.pageHeader {
+    //Шапка описания страниц
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sectionHeader {
+    margin-top: 20vh;
+
+    p {
+        font-family: FuturaMediumC, 'roboto', sans-serif;
+        font-size: 53px;
+        color: white;
+        font-family: FuturaMediumC, 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 8vh;
+        letter-spacing: 0.145em;
+    }
+}
+
+.underheader {
+    p {
+        font-family: FuturaMediumC, 'roboto', sans-serif;
+        font-size: 23px;
+        color: #6a6a6a;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+    }
+}
+
+.mainBtn {
+    font-size: 23px;
+    margin-top: 15px;
+
+    a {
+        font-family: FuturaMediumC, 'roboto', sans-serif;
+        text-decoration: none;
+        color: white;
+        background: transparent;
+        border: 1px solid white;
+        padding: 14px 19px;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #6a6a6a;
+            background: white;
+            border: 1px solid white;
+            padding: 14px 19px;
+        }
+    }
+}
+
+.mainPageArrow {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    bottom: 40px;
+    left: 50%;
+    padding: 0;
+    margin-left: -32px;
+
+
+    animation-name: main-arrow-animation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+
+    a {
+        position: absolute;
+        height: 64px;
+    }
+
+    object {
+        pointer-events: none;
+    }
+}
+
+
+@keyframes main-arrow-animation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .sectionHeader {
+        p {
+            font-size: 53px;
+        }
+    }
+
+    .services-link {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .mainPageArrow {
+        display: none;
+    }
+
+    .sectionHeader {
+        margin-top: 17vh;
+
+        p {
+            font-size: 40px;
+            line-height: 6vh;
+        }
+    }
+
+    .underheader {
+        p {
+            margin-top: 0;
+            font-size: 18px;
+            line-height: 125.1%;
+        }
+    }
+
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 2rem;
+        margin-top: 4vh;
+
+        img {
+            width: 80px;
+        }
+    }
+
+    .mainBtn {
+        font-size: 2vh;
+        margin-top: 2vh;
+
+        button {
+            color: white;
+            background: transparent;
+            border: 1px solid white;
+            padding: 1.5vh 2.1vh;
+            transition: all 0.5s;
+
+            &:hover {
+                color: #6a6a6a;
+                background: white;
+                border: 1px solid white;
+                padding: 1.5vh 2.1vh;
+            }
+        }
+    }
+
+    .burgerBtn {
+        display: inline-block;
+        z-index: 3;
+        margin-top: 3vh;
+        margin-left: 3vh;
+        //transform: translateX(75%) translateY(75%);
+    }
+
+    .menu {
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        background-color: #2a2a2a;
+        padding: 75px 20px 20px 20px;
+        transition: transform .5s;
+        z-index: 2;
+
+        ul {
+            a {
+                display: block;
+                font-size: 21px;
+                padding: 2vh 5vh;
+            }
+        }
+    }
+
+    .header .open .menu {
+        transform: translateX(100%);
+    }
+}

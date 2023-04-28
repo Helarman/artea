@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "footerLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.navlink"
+    },
+    "Email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.email"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.socia-links"
+    },
+    "copirightInfo": {
+      "type": "string"
+    },
+    "legalInfo": {
+      "type": "string"
+    }
+  }
+}

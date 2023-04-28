@@ -1,0 +1,31 @@
+//жирный текст под картинкой слева
+.slogan{
+    margin-top: 71px;
+    p{
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 44px;
+        letter-spacing: 0.04em;
+        color: #2A2A2A;
+    }
+}
+//тонкий серый текст под картинкой справа
+.underSlogan{
+    margin-top: 71px;
+    p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+        color: #737373;
+    }
+}
+
+@media (max-width: 991.5px) {
+    .underSlogan{
+        margin-top: 20px;
+    }
+}

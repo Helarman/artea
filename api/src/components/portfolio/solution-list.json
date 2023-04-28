@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_portfolio_solution_lists",
+  "info": {
+    "displayName": "Solution List"
+  },
+  "options": {},
+  "attributes": {
+    "solutionList": {
+      "type": "string"
+    }
+  }
+}

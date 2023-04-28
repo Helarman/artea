@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_portfolio_description_lists",
+  "info": {
+    "displayName": "descriptionList"
+  },
+  "options": {},
+  "attributes": {
+    "descriptionList": {
+      "type": "string"
+    }
+  }
+}

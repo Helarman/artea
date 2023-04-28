@@ -1,0 +1,537 @@
+//main
+//вся секция с первой картинкой и описанием
+.sectionTopic {
+    margin-top: 70px;
+}
+
+//текст справа от картинки
+.topic {
+    margin-left: 40px;
+}
+
+//картинка
+.topicImg {
+    img {
+        width: 100%;
+    }
+}
+
+//заголовок в описании
+.topicHeader {
+    h1 {
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.06em;
+        color: #2A2A2A;
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+        color: #2A2A2A;
+        margin-bottom: 0;
+    }
+}
+
+//список ( че мы сделали на сайте)
+.topicDescription {
+    margin-top: 30px;
+
+    ul {
+        padding-left: 0;
+
+        p {
+            margin-bottom: 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 125.1%;
+            letter-spacing: 0.03em;
+            color: #2A2A2A;
+        }
+    }
+}
+
+//инфа про заказчика год и категорию соответственно
+.topicInfo {
+    margin-top: 29px;
+
+    .topicInfoClient,
+    .topicInfoYear,
+    .topicInfoCategory {
+        margin-top: 9px;
+
+        p {
+            display: inline-block;
+            margin-bottom: 9px;
+        }
+
+        p:nth-child(1) {
+            font-family: 'FuturaMediumC';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 125.1%;
+            letter-spacing: 0.03em;
+            color: #2A2A2A;
+        }
+
+        p:nth-child(2) {
+            padding-left: 5px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 125.1%;
+            letter-spacing: 0.03em;
+            color: #2A2A2A;
+        }
+    }
+}
+
+//стиль для линии
+.topicLine {
+    height: 1px;
+    width: 163px;
+    background-color: #6a6a6a;
+}
+
+//вся 2 секция
+.sectionDiscuss {
+    margin-top: 75px;
+}
+
+//2 секция (Обсудили и составили и выбранные решения)
+.discussList,
+.solution {
+    h1 {
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 52px;
+        letter-spacing: 0.06em;
+        color: #2a2a2a;
+    }
+
+    ul {
+        margin-top: 8px;
+
+        li {
+            padding-top: 10px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 125.7%;
+            letter-spacing: 0.03em;
+            color: #2a2a2a;
+        }
+    }
+}
+
+//3 секция карта сайта (Добавил сюда еще через запятую секцию навигации тк стили одинаковые)
+.sectionMap,
+.sectionNavigation {
+    margin-top: 75px;
+}
+
+//Заголовок и позаголовок
+.mapHeader,
+.navigationHeader {
+    h1 {
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 45px;
+        line-height: 52px;
+        letter-spacing: 0.06em;
+        color: #2a2a2a;
+    }
+
+    p {
+        margin-top: 18px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 25px;
+        letter-spacing: 0.03em;
+        color: #2a2a2a;
+    }
+}
+
+//сама картинка карты
+.mapImg,
+.navigationImg {
+    margin-top: 75px;
+
+    img {
+        width: 100%;
+    }
+}
+
+//конечная секция со стрелочками и кнопкой
+//линия
+.endLine {
+    margin-top: 75px;
+    height: 1px;
+    width: 100%;
+    background-color: #6A6A6A;
+}
+
+//секция с кнопками
+.preFooter {
+    position: relative;
+    margin-bottom: 75px;
+}
+
+//предыдщий проект
+.previousProject,
+.nextProject {
+    cursor: pointer;
+    margin-top: 51px;
+    display: inline-block;
+
+    &:hover p {
+        text-decoration: underline;
+    }
+
+    object {
+        pointer-events: none;
+        transform: translateY(-20%);
+    }
+
+    p {
+        margin-left: 18px;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+        color: #2A2A2A;
+
+    }
+}
+
+//кнопка возвращения в список
+.backToListBtn {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+
+    object {
+        pointer-events: none;
+    }
+}
+
+//следующий проект
+.nextProject {
+    position: absolute;
+    right: 0;
+
+    p {
+        margin-left: 0;
+        margin-right: 18px;
+    }
+}
+
+//footer
+.footer {
+    background-color: #2a2a2a;
+}
+
+.footerSlogan {
+    margin-top: 90px;
+    margin-bottom: 90px;
+
+    p {
+        font-family: 'FuturaMediumC', 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 130%;
+        color: #FFFFFF;
+    }
+}
+
+.footerLine {
+    position: relative;
+    width: 100px;
+    height: 1px;
+    background-color: white;
+    top: 50%;
+    left: -75%;
+    transform: rotate(90deg);
+}
+
+.contactsHeader {
+    margin-top: 90px;
+    text-align: center;
+
+    p {
+        font-family: 'FuturaMediumC', 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 125.5%;
+        color: #FFFFFF;
+    }
+}
+
+.contactsMail {
+    text-align: center;
+    margin-top: 40px;
+
+    p {
+        font-family: 'FuturaBookC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 125.5%;
+        color: #737373;
+    }
+}
+
+.contactsIcons {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.vkIcon {
+    position: relative;
+    left: 20%;
+    height: 26px;
+    width: 26px;
+}
+
+.tgIcon {
+    position: relative;
+    height: 22px;
+    width: 22px;
+}
+
+.waIcon {
+    position: relative;
+    right: 20%;
+    height: 24px;
+    width: 24px;
+}
+
+//media
+
+
+@media (max-width: 1399px) {
+
+    //заголовок в описании
+    .topicHeader {
+        h1 {
+            font-size: 43px;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    }
+
+    //список ( че мы сделали на сайте)
+    .topicDescription {
+        margin-top: 15px;
+
+        ul {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    //инфа про заказчика год и категорию соответственно
+    .topicInfo {
+        margin-top: 20px;
+
+        .topicInfoClient,
+        .topicInfoYear,
+        .topicInfoCategory {
+            p:nth-child(1) {
+                font-size: 18px;
+            }
+
+            p:nth-child(2) {
+                font-size: 18px;
+            }
+
+        }
+    }
+
+    //вся 2 секция
+    .sectionDiscuss {
+        margin-top: 50px;
+    }
+
+    //2 секция (Обсудили и составили и выбранные решения)
+    .discussList,
+    .solution {
+        h1 {
+            font-size: 40px;
+        }
+
+        ul {
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+
+    //3 секция карта сайта (Добавил сюда еще через запятую секцию навигации тк стили одинаковые)
+    .sectionMap,
+    .sectionNavigation {
+        margin-top: 50px;
+    }
+
+    //Заголовок и позаголовок
+    .mapHeader,
+    .navigationHeader {
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            margin-top: 18px;
+            font-size: 20px;
+        }
+    }
+
+    //сама картинка карты
+    .mapImg,
+    .navigationImg {
+        margin-top: 50px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .topic {
+        margin-top: 50px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 2rem;
+        margin-top: 30px;
+
+        img {
+            width: 80px;
+        }
+    }
+
+    .burgerBtn {
+        display: inline-block;
+        z-index: 11;
+        margin-top: 22px;
+        margin-left: 22px;
+        //transform: translateX(75%) translateY(75%);
+    }
+
+    .menu {
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: -100%;
+        background-color: #2a2a2a;
+        padding: 75px 20px 20px 20px;
+        transition: transform .5s;
+        z-index: 10;
+
+        ul {
+            a {
+                display: block;
+                font-size: 21px;
+                padding: 15px 38px;
+            }
+        }
+    }
+
+    .header.open .menu {
+        transform: translateX(100%);
+    }
+
+    .footerSlogan {
+        position: relative;
+        left: 0;
+    }
+
+    .contactsHeader {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .contactsMail {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .contactsIcons {
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .vkIcon {
+        position: relative;
+        left: 0;
+        height: 26px;
+        width: 26px;
+    }
+
+    .tgIcon {
+        position: relative;
+        height: 22px;
+        width: 22px;
+    }
+
+    .waIcon {
+        position: relative;
+        right: 0;
+        height: 24px;
+        width: 24px;
+    }
+
+    .menuRequest {
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .previousProject,
+    .nextProject {
+        margin-top: 35px;
+
+        p {
+            display: none;
+        }
+    }
+}

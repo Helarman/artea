@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "tag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "allportfolio": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::portfolio-item.portfolio-item",
+      "inversedBy": "tags"
+    },
+    "count": {
+      "type": "integer",
+      "default": 10,
+      "required": true
+    }
+  }
+}

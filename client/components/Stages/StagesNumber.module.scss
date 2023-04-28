@@ -1,0 +1,105 @@
+//Этапы разработки
+.stages {
+    margin-top: 50px;
+}
+
+//заголовок секции с этапами
+.stagesHeader {
+    margin-bottom: 80px;
+
+    h1 {
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+}
+
+//каждый пункт
+.point {
+    text-align: center;
+    margin-bottom: 66px;
+
+    h1 {
+        text-align: center;
+        height: 68px;
+        width: 68px;
+        display: inline-block;
+        border: 2px solid #2a2a2a;
+        border-radius: 50%;
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 60px;
+        letter-spacing: 0.04em;
+        color: #2a2a2a;
+        margin: 0;
+    }
+
+    h2 {
+        height: 60px;
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+        margin: 0;
+        padding-top: 40px;
+        padding-bottom: 29px;
+    }
+
+    p {
+        margin-top: 40px;
+        font-family: 'FuturaBookC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 125.1%;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #737373;
+
+    }
+}
+
+//пункты где заголовок в 2 строчки
+.point2line {
+    h2 {
+        padding-top: 22px;
+        padding-bottom: 16px
+    }
+}
+
+@media (max-width: 991.5px) {
+    .stages {
+        margin-top: 20px;
+    }
+
+    .stagesHeader {
+        margin-bottom: 50px;
+
+        h1 {
+            font-size: 40px;
+        }
+    }
+}
+
+@media(max-width: 767.5px) {
+    .stages {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 575.5px){
+    .stagesHeader{
+        h1{
+            font-size: 45px;
+            line-height: 40px;
+        }
+    }
+}

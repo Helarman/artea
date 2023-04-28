@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_portfolio_blocks",
+  "info": {
+    "displayName": "Block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "blockDescription": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

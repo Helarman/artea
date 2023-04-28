@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_footer_emails",
+  "info": {
+    "displayName": "email"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "emailLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolio",
+  "info": {
+    "singularName": "portfolio-item",
+    "pluralName": "portfolio",
+    "displayName": "portfolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "web",
+        "desktop",
+        "mobile",
+        "some",
+        "other"
+      ],
+      "required": true
+    },
+    "spenttime": {
+      "type": "integer"
+    },
+    "onHomepage": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "previewSvg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "previewPng": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "background": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "borderWidth": {
+      "type": "integer",
+      "default": 0
+    },
+    "borderColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "allportfolio"
+    },
+    "client": {
+      "type": "string"
+    },
+    "year": {
+      "type": "biginteger"
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "descriptionList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.description-list"
+    },
+    "discussList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.discuss-list"
+    },
+    "solutionList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.solution-list"
+    },
+    "block": {
+      "type": "component",
+      "repeatable": true,
+      "component": "portfolio.block"
+    },
+    "uuid": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
+    }
+  }
+}

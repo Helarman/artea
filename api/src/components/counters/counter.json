@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_counters_counters",
+  "info": {
+    "displayName": "Counter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "time": {
+      "type": "integer",
+      "required": true,
+      "default": 1000
+    }
+  }
+}

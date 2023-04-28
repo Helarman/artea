@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_footer_socia_links",
+  "info": {
+    "displayName": "sociaLinks"
+  },
+  "options": {},
+  "attributes": {
+    "vkLink": {
+      "type": "string",
+      "required": true
+    },
+    "waLink": {
+      "type": "string",
+      "required": true
+    },
+    "tgLink": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

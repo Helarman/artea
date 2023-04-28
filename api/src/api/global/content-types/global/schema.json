@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "global",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Navbar": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.navlink"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.email"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.socia-links"
+    },
+    "copyrightInfo": {
+      "type": "string"
+    },
+    "legalInfo": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.phone"
+    },
+    "footerFitsColumnLInks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.navlink"
+    },
+    "footerSecondColumnLInks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.navlink"
+    },
+    "footerThirdColumnLInks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav.navlink"
+    },
+    "firstColumnTitle": {
+      "type": "string",
+      "required": true
+    },
+    "secondColumnTitle": {
+      "type": "string",
+      "required": true
+    },
+    "thirdColumnTitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,613 @@
+.stagesHeader {
+    margin-top: 60px;
+    margin-bottom: 0px;
+
+    p {
+        font-family: 'FuturaMediumC', 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+}
+
+.steps {
+    width: 100%;
+    position: relative;
+    padding-top: 90px;
+}
+
+.stepsMobile {
+    display: none;
+}
+
+.path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear normal;
+    animation-fill-mode: forwards;
+}
+
+.point1 {
+    opacity: 1;
+}
+
+.discuss {
+    position: absolute;
+    top: 8%;
+    left: 18%;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point2 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+}
+
+.task {
+    position: absolute;
+    top: 0;
+    left: 40%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 0.6s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point3 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 1.3s;
+}
+
+.prototype {
+    position: absolute;
+    top: 8%;
+    left: 66%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 1.3s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point4 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 2.1s;
+}
+
+.design {
+    position: absolute;
+    top: 42%;
+    left: 55%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 2.1s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point5 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 2.8s;
+}
+
+.develop {
+    position: absolute;
+    top: 35%;
+    left: 27%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 2.8s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point6 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 3.6s;
+}
+
+.testing {
+    position: absolute;
+    top: 70%;
+    left: 18%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 3.6s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point7 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 4.3s;
+}
+
+.addContent {
+    position: absolute;
+    top: 77%;
+    left: 38%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 4.3s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+.point8 {
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 4.9s;
+}
+
+.regAndHost {
+    position: absolute;
+    top: 70%;
+    left: 66%;
+    text-align: center;
+    opacity: 0;
+    animation: point 0.1s linear normal;
+    animation-fill-mode: forwards;
+    animation-delay: 4.9s;
+
+    p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+
+
+@media (max-width: 1399px) {
+    .discuss {
+        top: 10%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .task {
+        top: 3%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .prototype {
+        top: 10%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .design {
+        top: 44%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .develop {
+        top: 37%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .testing {
+        top: 70%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .addContent {
+        top: 77%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+
+    .regAndHost {
+        top: 70%;
+
+        p {
+            font-size: 25px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .sectionHeader {
+        p {
+            font-size: 53px;
+        }
+    }
+}
+
+.discuss {
+    top: 12%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.task {
+    top: 5%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.prototype {
+    top: 12%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.design {
+    top: 44%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.develop {
+    top: 37%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.testing {
+    top: 70%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.addContent {
+    top: 77%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+.regAndHost {
+    top: 70%;
+
+    p {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 992px) {
+    .sectionHeader {
+        margin-top: 17vh;
+
+        p {
+            font-size: 40px;
+            line-height: 6vh;
+        }
+    }
+
+    .steps {
+        display: none;
+    }
+
+    .stepsMobile {
+        display: block;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    .pathMobile {
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        animation: dash 5s linear normal;
+        animation-fill-mode: forwards;
+    }
+
+    .point2 {
+        animation-delay: 0.6s;
+    }
+
+    .point3 {
+        animation-delay: 1.4s;
+    }
+
+    .point4 {
+        animation-delay: 2.1s;
+    }
+
+    .point5 {
+        animation-delay: 2.9s;
+    }
+
+    .point6 {
+        animation-delay: 3.6s;
+    }
+
+    .point7 {
+        animation-delay: 4.3s;
+    }
+
+    .point8 {
+        animation-delay: 5s;
+    }
+
+    .discussMobile {
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        opacity: 0;
+        animation: point linear normal;
+        animation-fill-mode: forwards;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 125.5%;
+            color: #2A2A2A;
+        }
+    }
+
+    .taskMobile {
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 0.6s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2A2A2A;
+        }
+    }
+
+    .prototypeMobile {
+        position: absolute;
+        top: 29.5%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 1.4s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 125.5%;
+            color: #2A2A2A;
+        }
+    }
+
+    .designMobile {
+        position: absolute;
+        top: 41.7%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 2.1s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 125.5%;
+            color: #2A2A2A;
+        }
+    }
+
+    .developMobile {
+        position: absolute;
+        top: 52%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 2.9s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2A2A2A;
+        }
+    }
+
+    .testingMobile {
+        position: absolute;
+        top: 64%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 3.6s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2A2A2A;
+        }
+    }
+
+    .addContentMobile {
+        position: absolute;
+        top: 78.6%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 4.3s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 125.5%;
+            color: #2A2A2A;
+        }
+    }
+
+    .regAndHostMobile {
+        position: absolute;
+        top: 89%;
+        left: 10%;
+        opacity: 0;
+        animation: point 0.1s linear normal;
+        animation-fill-mode: forwards;
+        animation-delay: 5s;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 110%;
+            color: #2A2A2A;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .stagesHeader {
+        margin-top: 60px;
+
+        p {
+            font-size: 45px;
+            line-height: 45px;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .allBlocks {
+        width: 300px;
+        height: 300px;
+
+        img {
+            width: 300px;
+        }
+    }
+
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 1;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes point {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

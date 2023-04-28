@@ -1,0 +1,41 @@
+.questionsHeader {
+    text-align: center;
+    margin-top: 160px;
+
+    p {
+        font-family: 'FuturaMediumC', 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+}
+
+.questionsBtn {
+    text-align: center;
+    margin-top: 36px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    color: #2A2A2A;
+    margin-bottom: 160px;
+
+    a {
+        padding: 15px 53px;
+        background: transparent;
+        border: 1px solid #2a2a2a;
+        transition: all 0.5s;
+        text-decoration: none;
+        color: #2A2A2A;
+
+        &:hover {
+            background: #2a2a2a;
+            color: white;
+            border: 1px solid #2a2a2a;
+        }
+    }
+
+}

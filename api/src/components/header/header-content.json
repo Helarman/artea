@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_header_header_contents",
+  "info": {
+    "displayName": "Header content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "header.header-button"
+    }
+  }
+}

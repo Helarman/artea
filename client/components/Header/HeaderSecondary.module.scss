@@ -1,0 +1,47 @@
+.aboutHeader{
+    position: relative;
+    height: 498px;
+    p{
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        text-align: center;
+        letter-spacing: 0.145em;
+        color: #FFFFFF;
+    }
+}
+
+@media (max-width: 696.5px){
+    .aboutHeader{
+        height: 250px;
+        p{
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 575.5px){
+    .aboutHeader{
+        p{
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+}
+
+@media(max-width: 393.5px){
+    .aboutHeader{
+        p{
+            font-size: 25px;
+            line-height: 40px;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_header_header_buttons",
+  "info": {
+    "displayName": "header button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

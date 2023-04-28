@@ -1,0 +1,56 @@
+{
+  "kind": "singleType",
+  "collectionName": "requests",
+  "info": {
+    "singularName": "request",
+    "pluralName": "requests",
+    "displayName": "Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "descr": {
+      "type": "text",
+      "required": true
+    },
+    "nameLabel": {
+      "type": "string",
+      "required": true
+    },
+    "namePlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "phonePlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "selectLabel": {
+      "type": "string",
+      "required": true
+    },
+    "smallDescriptionLabel": {
+      "type": "string",
+      "required": true
+    },
+    "smallDescriptionPlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "recipient": {
+      "type": "string",
+      "required": true
+    },
+    "phoneLabel": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

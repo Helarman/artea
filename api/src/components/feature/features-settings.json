@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_feature_features_settings",
+  "info": {
+    "displayName": "Features settings",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quantityInLine": {
+      "type": "integer",
+      "default": 4,
+      "required": true,
+      "max": 6,
+      "min": 2
+    }
+  }
+}

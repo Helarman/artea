@@ -1,0 +1,76 @@
+.reviewHeader {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    p {
+        font-family: 'FuturaMediumC', 'roboto', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+}
+
+.reviewCard {
+    background: #FFFFFF;
+    box-shadow: 6px 7px 20px rgba(0, 0, 0, 0.25);
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+
+    img {
+        border-radius: 50%;
+        margin-top: 41px;
+        margin-left: 28px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .reviewText {
+        margin: 28px;
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 125.5%;
+            color: #2A2A2A;
+        }
+
+        .reviewLine {
+            background-color: #6A6A6A;
+            height: 1px;
+            width: 100%;
+        }
+
+        .reviewName {
+            text-align: right;
+            margin-top: 25px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 125.5%;
+            color: #6A6A6A;
+        }
+
+        .reviewCompany {
+            text-align: right;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 125.5%;
+            color: #6A6A6A;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .feedback-header {
+        margin-bottom: 30px;
+
+        p {
+            font-size: 45px;
+        }
+    }
+}

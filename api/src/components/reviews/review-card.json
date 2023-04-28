@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_reviews_review_cards",
+  "info": {
+    "displayName": "Review card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Lastname": {
+      "type": "string"
+    },
+    "Company": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
