@@ -9,25 +9,27 @@ import QuestionsSection from '@/components/Questions/Questions';
 import Footer from '@/components/Footer/Footer'
 
 export const getStaticProps = async () => {
-  const [res1, res2, res3] = await Promise.all([
+  const [res1, res2, res3, res4] = await Promise.all([
       fetch(`http://localhost:1337/api/global?populate=*`),
       fetch(`http://localhost:1337/api/homepage?populate=*`),
       fetch(`http://localhost:1337/api/reviews?filters[onHomepage][$eq]=true`),
+      fetch(`http://localhost:1337/api/portfolio?filters[onHomepage][$eq]=true&populate=*`),
   ]);
 
-  const [data1, data2, data3] = await Promise.all([
+  const [data1, data2, data3, data4] = await Promise.all([
       res1.json(),
       res2.json(),
-      res3.json()
+      res3.json(),
+      res4.json()
   ])
 
   return {
-      props: { global: data1, page: data2, reviews: data3 },
+      props: { global: data1, page: data2, reviews: data3, portfolio: data4 },
 
   }
 };
 
-const Home = ({ global, page, reviews }) => {
+const Home = ({ global, page, reviews, portfolio }) => {
   const Content = page.data.attributes;
   const Services = page.data.attributes.serviceCard;
 
@@ -42,7 +44,7 @@ const Home = ({ global, page, reviews }) => {
       </Head>
       <Header headerContent={Content} global={global} />
       <FeaturesSection featuresContent={Content} id="#features" />
-      <PortfolioSection />
+      <PortfolioSection portfolio={portfolio}/>
       <ServicesSection servicesContent={Services} />
       <StagesSection />
       <ReviewsSection Reviews={reviews.data} />

@@ -5,8 +5,8 @@ import Link from "next/link";
 import Carousel from "./Carousel"
 
 
-const Portfolio = ({ portfolioContent }) => {
-	const cards = portfolioContent;
+const Portfolio = ({ portfolio }) => {
+	const cards = portfolio;
 	return (
 		<div className={styles.portfolio}>
 			<div className={`container`}>

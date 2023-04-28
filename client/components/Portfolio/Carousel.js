@@ -7,7 +7,10 @@ import Slider from "react-slick";
 import Link from "next/link";
 
 
-const Carousel = () => {
+const Carousel = ({cards}) => {
+	const Cards = cards.data;
+	//const Quantity = cards.meta.pagination.total;
+
 	var settings = {
 		infinite: true,
 		centerMode: true,
@@ -40,93 +43,23 @@ const Carousel = () => {
 	return (
 
 		<Slider {...settings}>
-			<div>
-				<Link href="#">
-					<div className={styles.cardBakery}>
-						<div className={styles.logoCard}>
-							<img src="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg"></img>
-						</div>
-						<div className={styles.darken}>
-							<div className={styles.cardDescription}>
-								<p>Интернет-магазин</p>
-								<p>для кафе-пекарни baguettvest</p>
+			{Cards.map(({ id, attributes}) => (
+				<div key={id}>
+					<Link href="#">
+						<div style={{ background: `${attributes.background}`, border: `${attributes.borderWidth}px solid ${attributes.borderColor}` }} className={styles.card}>
+							<div className={styles.logoCard}>
+								<img src={`http://localhost:1337${attributes.previewPng.data.attributes.url}`}></img>
+							</div>
+							<div className={styles.darken}>
+								<div className={styles.cardDescription}>
+									<p>{attributes.title}</p>
+									<p>{attributes.text}</p>
+								</div>
 							</div>
 						</div>
-					</div>
-				</Link>
-			</div>
-
-			<div>
-				<Link href="#">
-					<div className={styles.cardTechZone}>
-						<div className={styles.logoCard}>
-							<object type="image/svg+xml" data="http://localhost:1337/uploads/techzone_24b12f7f0d.svg">
-								<img src="http://localhost:1337/uploads/techzone_24b12f7f0d.svg"></img>
-							</object>
-						</div>
-						<div className={styles.darken}>
-							<div className={styles.cardDescription}>
-								<p>Интернет-магазин</p>
-								<p>для кафе-пекарни baguettvest</p>
-							</div>
-						</div>
-					</div>
-				</Link>
-			</div>
-
-			<div>
-				<Link href="#">
-					<div className={styles.cardTriTrip}>
-						<div className={styles.logoCard}>
-							<object type="image/svg+xml" data="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg">
-								<img src="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg"></img>
-							</object>
-						</div>
-						<div className={styles.darken}>
-							<div className={styles.cardDescription}>
-								<p>Интернет-магазин</p>
-								<p>для кафе-пекарни baguettvest</p>
-							</div>
-						</div>
-					</div>
-				</Link>
-			</div>
-
-			<div>
-				<Link href="#">
-					<div className={styles.cardRentme}>
-						<div className={styles.logoCard}>
-							<object type="image/svg+xml" data="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg">
-								<img src="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg"></img>
-							</object>
-						</div>
-						<div className={styles.darken}>
-							<div className={styles.cardDescription}>
-								<p>Интернет-магазин</p>
-								<p>для кафе-пекарни baguettvest</p>
-							</div>
-						</div>
-					</div>
-				</Link>
-			</div>
-
-			<div>
-				<Link href="#">
-					<div className={styles.cardBakery}>
-						<div className={styles.logoCard}>
-							<object type="image/svg+xml" data="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg">
-								<img src="http://localhost:1337/uploads/Tri_Trip_3e65ab0466.svg"></img>
-							</object>
-						</div>
-						<div className={styles.darken}>
-							<div className={styles.cardDescription}>
-								<p>Интернет-магазин</p>
-								<p>для кафе-пекарни baguettvest</p>
-							</div>
-						</div>
-					</div>
-				</Link>
-			</div>
+					</Link>
+				</div>
+			 ))}
 		</Slider>
 	);
 }
