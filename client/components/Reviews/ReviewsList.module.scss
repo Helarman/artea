@@ -1,0 +1,128 @@
+.none{
+    display: none;
+}
+
+//Отзывы
+//Блок с отзывами
+.feedbackBlock{
+    margin-top: 116px;
+}
+//Имя и организация
+.feedbackName{
+    h1{
+        font-family: 'FuturaMediumC', roboto, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 53px;
+        line-height: 61px;
+        letter-spacing: 0.145em;
+        color: #2A2A2A;
+    }
+    p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+        margin-bottom: 0;
+    }
+}
+//Сам отзыв
+.review{
+    margin-top: 45px;
+    p{
+        font-family: 'FuturaBookC';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        line-height: 125.1%;
+        letter-spacing: 0.03em;
+        color: #737373;
+    }
+}
+//Дата
+.date{
+    margin-top: 35px;
+    text-align: right;
+    p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 125.5%;
+        color: #2A2A2A;
+    }
+}
+//Линия - конец блока
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: #6a6a6a;
+}
+//Навигация
+.navigation{
+    margin-top: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 104px;
+    .pageNumbers{
+        .inline{
+            display: inline-block;
+        }
+        .none{
+            display: none;
+        }
+        ul{
+            margin: 0;
+            padding-left: 0;
+            a{
+                cursor: pointer;
+                padding-right: 17px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 125.1%;
+                letter-spacing: 0.03em;
+                color: #2A2A2A;
+                text-decoration: none;
+            }
+            p{
+                display: inline-block;
+                margin: 0;
+                transform: translateY(-25%);
+                padding-right: 17px;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 125.1%;
+                letter-spacing: 0.03em;
+                color: #2A2A2A;
+            }
+        }
+    }
+}
+//стрелки
+.leftArrow{
+    display: inline-block;
+    transform: translateY(-10%);
+    margin-right: 35px;
+    cursor: pointer;
+}
+.rightArrow{
+    margin-left: 18px;
+    display: inline-block;
+    transform: translateY(-10%);
+    cursor: pointer;
+}
+//активное состояние страницы. Присваивать к а.
+.pageActive{
+    font-family: 'FuturaMediumC', roboto, sans-serif;
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    color: #2A2A2A;
+}
+//неактивное состояние стрелки на всякий случай
+    .nonActiveArrow{
+        cursor: default;
+        margin-right: 35px;
+    }

@@ -1,4 +1,4 @@
-.aboutHeader{
+.header{
     position: relative;
     height: 498px;
     p{
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 696.5px){
-    .aboutHeader{
+    .header{
         height: 250px;
         p{
             font-size: 40px;
@@ -29,7 +29,7 @@
 }
 
 @media (max-width: 575.5px){
-    .aboutHeader{
+    .header{
         p{
             font-size: 30px;
             line-height: 40px;
@@ -38,7 +38,7 @@
 }
 
 @media(max-width: 393.5px){
-    .aboutHeader{
+    .header{
         p{
             font-size: 25px;
             line-height: 40px;

@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "review_pages",
+  "info": {
+    "singularName": "review-page",
+    "pluralName": "review-pages",
+    "displayName": "ReviewPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "background": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
