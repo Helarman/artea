@@ -95,7 +95,7 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
                     <p>current:{size}</p>
                     <a onClick={() => router.push(`/reviews??page=1&size=1`)}>1</a><br></br>
                     <a onClick={() => router.push(`/reviews?page=1&size=2`)}>2</a><br></br>
-                    <a onClick={() => router.push(`/reviews?page=17&size=6`)}>6</a><br></br>
+                    <a onClick={() => router.push(`/reviews?page=1&size=6`)}>6</a><br></br>
                     <a onClick={() => router.push(`/reviews?page=1&size=12`)}>12</a>
                 </ul>
 
