@@ -10,9 +10,8 @@ import Error from '@/components/Error/Error';
 
 
 export const getServerSideProps = async ({ query }) => {
-    
     const { page = 1 } = query;
-    const { size = 1 } = query;
+    const { size = 12    } = query;
     const start = +page === 1 ? 0 : (+page)
 
     const def = +size === 1 ? 0 : (+size)
@@ -28,7 +27,7 @@ export const getServerSideProps = async ({ query }) => {
         res2.json(),
         res3.json()
     ])
-
+   
     return {
         props: { global: data1, reviews: data2, pageData: data3, page: +page, size: +size },
 
