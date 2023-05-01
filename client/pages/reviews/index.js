@@ -9,12 +9,17 @@ import Error from '@/components/Error/Error';
 
 
 
-export const getServerSideProps = async ({ query: { page = 1 } }) => {
-
+export const getServerSideProps = async ({ query }) => {
+    
+    const { page = 1 } = query;
+    const { size = 1 } = query;
     const start = +page === 1 ? 0 : (+page)
+
+    const def = +size === 1 ? 0 : (+size)
+
     const [res1, res2, res3] = await Promise.all([
         fetch(`http://localhost:1337/api/global?populate=*`),
-        fetch(`http://localhost:1337/api/reviews?pagination[page]=${start}&pagination[pageSize]=1`),
+        fetch(`http://localhost:1337/api/reviews?pagination[page]=${start}&pagination[pageSize]=${def}`),
         fetch(`http://localhost:1337/api/review-page?populate=*`)
     ]);
 
@@ -25,13 +30,12 @@ export const getServerSideProps = async ({ query: { page = 1 } }) => {
     ])
 
     return {
-        props: { global: data1, reviews: data2, pageData: data3, page: +page, start: start },
+        props: { global: data1, reviews: data2, pageData: data3, page: +page, size: +size },
 
     }
 };
 
-const ReviewsPage = ({ global, reviews, pageData, page, start }) => {
-
+const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
 
     const router = useRouter();
 
@@ -46,7 +50,7 @@ const ReviewsPage = ({ global, reviews, pageData, page, start }) => {
     const nextPage = page + 1 //Следующая
     const afterNextPage = page + 2 //После следующей
 
-    const hidePagination = pageQuantity >= 1;
+    const hidePagination = pageQuantity === 1;
 
     const hidePrevDots = page > 2; // Скрываем точки, если первая или вторая страница
     const hideNextDots = afterNextPage < pageQuantity; //Скрываем точки, если после страница предпоследняя или последняя 
@@ -87,10 +91,18 @@ const ReviewsPage = ({ global, reviews, pageData, page, start }) => {
             <NavbarSecondary global={global} />
             <HeaderSecondary title={title} background={background} />
 
+                <ul>
+                    <p>current:{size}</p>
+                    <a onClick={() => router.push(`/reviews??page=1&size=1`)}>1</a><br></br>
+                    <a onClick={() => router.push(`/reviews?page=1&size=2`)}>2</a><br></br>
+                    <a onClick={() => router.push(`/reviews?page=17size=6`)}>6</a><br></br>
+                    <a onClick={() => router.push(`/reviews?page=1&size=12`)}>12</a>
+                </ul>
+
             <ReviewsList reviews={reviews} />
 
-            <div id="pagination" className={` ${hidePagination ? `${styles.navigation}` : `${styles.none}`}`}>
-                <div className={` ${hidePrevArrow ? `${styles.leftArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hidePrevArrow) { router.push(`/reviews?page=${page - 1}#pagination`) } }}>
+            <div id="pagination" className={` ${hidePagination ? `${styles.none}` : `${styles.navigation}`}`}>
+                <div className={` ${hidePrevArrow ? `${styles.leftArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hidePrevArrow) { router.push(`/reviews?page=${page - 1}&size=${size}`) } }}>
                     <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.646446 4.35355C0.451185 4.15829 0.451185 3.84171 0.646446 3.64645L3.82843 0.464466C4.02369 0.269204 4.34027 0.269204 4.53553 0.464466C4.7308 0.659728 4.7308 0.976311 4.53553 1.17157L1.70711 4L4.53553 6.82843C4.7308 7.02369 4.7308 7.34027 4.53553 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646446 4.35355ZM30 4.5H1V3.5H30V4.5Z" fill="#2A2A2A" />
                     </svg>
@@ -99,22 +111,24 @@ const ReviewsPage = ({ global, reviews, pageData, page, start }) => {
                     <ul>
 
                         <p className={` ${hidePrevDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
-                        <a className={` ${itsLast && !itsSecond ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page - 2}#pagination`)}>{page - 2}</a>
-                        <a className={` ${hideFirst ? `${styles.none}` : `${styles.inline}`}`} onClick={() => router.push(`/reviews?page=${page - 1}#pagination`)}>{page - 1}</a>
+                        <a className={` ${itsLast && !itsSecond ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page - 2}&size=${size}`)}>{page - 2}</a>
+                        <a className={` ${hideFirst ? `${styles.none}` : `${styles.inline}`}`} onClick={() => router.push(`/reviews?page=${page - 1}&size=${size}`)}>{page - 1}</a>
                         <a className={styles.pageActive}>{page}</a>
-                        <a className={` ${hidePreLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 1}#pagination`)}>{page + 1}</a>
-                        <a className={` ${hideLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 2}#pagination`)}>{page + 2}</a>
+                        <a className={` ${hidePreLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 1}&size=${size}`)}>{page + 1}</a>
+                        <a className={` ${hideLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 2}&size=${size}`)}>{page + 2}</a>
                         <p className={` ${hideNextDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
                     </ul>
                 </div>
-                <div className={` ${hideNextArrow ? `${styles.rightArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hideNextArrow) { router.push(`/reviews?page=${page + 1}#pagination`) } }}
+
+
+                <div className={` ${hideNextArrow ? `${styles.rightArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hideNextArrow) { router.push(`/reviews?page=${page + 1}&size=${size}  `) } }}
                     disabled={page <= 1}>
                     <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M29.3536 4.35355C29.5488 4.15829 29.5488 3.84171 29.3536 3.64645L26.1716 0.464466C25.9763 0.269204 25.6597 0.269204 25.4645 0.464466C25.2692 0.659728 25.2692 0.976311 25.4645 1.17157L28.2929 4L25.4645 6.82843C25.2692 7.02369 25.2692 7.34027 25.4645 7.53553C25.6597 7.7308 25.9763 7.7308 26.1716 7.53553L29.3536 4.35355ZM0 4.5H29V3.5H0V4.5Z" fill="#2A2A2A" />
                     </svg>
                 </div>
             </div>
-            
+
             <Footer global={global} />
         </div>
     )
