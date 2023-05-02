@@ -10,11 +10,11 @@ import Error from '@/components/Error/Error';
 
 
 export const getServerSideProps = async ({ query }) => {
-    const { page = 1 } = query;
-    const { size = 12    } = query;
-    const start = +page === 1 ? 0 : (+page)
+    const { page = 1 } = query; //default page
+    const { size = 12    } = query; //default items quantity per page
 
-    const def = +size === 1 ? 0 : (+size)
+    const start = +page === 1 ? 0 : (+page) //default page for request
+    const def = +size === 1 ? 0 : (+size) //default items quantity per page for request
 
     const [res1, res2, res3] = await Promise.all([
         fetch(`http://localhost:1337/api/global?populate=*`),
@@ -38,25 +38,26 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
 
     const router = useRouter();
 
-    const title = pageData.data.attributes.title;
-    const background = pageData.data.attributes.background.data.attributes;
+    const title = pageData.data.attributes.title; //header title
+    const background = pageData.data.attributes.background.data.attributes; //header background
 
-    const pagination = reviews.meta.pagination; //Все данные pagination
-    const pageQuantity = reviews.meta.pagination.pageCount; //Количество страниц
-    const total = reviews.meta.pagination.total;
-    const beforePreviousPage = page - 2 //Перед предыдущей 
-    const previousPage = page - 1 //Предыдущая
-    const nextPage = page + 1 //Следующая
-    const afterNextPage = page + 2 //После следующей
+    const pagination = reviews.meta.pagination; //all pagination data
+    const pageQuantity = reviews.meta.pagination.pageCount; //page quantity
+    const total = reviews.meta.pagination.total; //items total quantity
+
+    const beforePreviousPage = page - 2;
+    const previousPage = page - 1;
+    const nextPage = page + 1;
+    const afterNextPage = page + 2;
 
     const hidePagination = pageQuantity === 1;
 
-    const hidePrevDots = page > 2; // Скрываем точки, если первая или вторая страница
-    const hideNextDots = afterNextPage < pageQuantity; //Скрываем точки, если после страница предпоследняя или последняя 
+    const hidePrevDots = page > 2;
+    const hideNextDots = afterNextPage < pageQuantity; 
 
-    const hidePrevArrow = page > 1; // Скрываем стрелку, если первая страница
-    const hideNextArrow = nextPage <= pageQuantity; //Скрываем стрелку, если последняя страница
-    const hideFirst = previousPage === 0; //Скрвыем элементы если страница первая
+    const hidePrevArrow = page > 1; 
+    const hideNextArrow = nextPage <= pageQuantity; 
+    const hideFirst = previousPage === 0; 
     const hidePreLast = nextPage <= pageQuantity;
     const hideLast = afterNextPage <= pageQuantity;
     const itsLast = page === pageQuantity;
