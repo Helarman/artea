@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_form_connect_types",
+  "info": {
+    "displayName": "connectType",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "connectTypeLabel": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "phone",
+        "email",
+        "social"
+      ]
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

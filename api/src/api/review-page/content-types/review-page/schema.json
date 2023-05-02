@@ -23,6 +23,66 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "formTitle": {
+      "type": "string",
+      "required": true
+    },
+    "formDescription": {
+      "type": "string",
+      "required": true
+    },
+    "nameLabel": {
+      "type": "string",
+      "required": true
+    },
+    "namePlaceholder": {
+      "type": "string"
+    },
+    "orgLabel": {
+      "type": "string",
+      "required": true
+    },
+    "orgPlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "phoneLabel": {
+      "type": "string",
+      "required": true
+    },
+    "phonePlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "connectLabel": {
+      "type": "string"
+    },
+    "connectType": {
+      "displayName": "connectType",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.connect-type"
+    },
+    "emailLabel": {
+      "type": "string",
+      "required": true
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "textLabel": {
+      "type": "string",
+      "required": true
+    },
+    "textPlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "checkbox": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.checkbox"
     }
   }
 }

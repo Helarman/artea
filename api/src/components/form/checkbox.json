@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_form_checkboxes",
+  "info": {
+    "displayName": "checkbox"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "linkHref": {
+      "type": "string"
+    }
+  }
+}
