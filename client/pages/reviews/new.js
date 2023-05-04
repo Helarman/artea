@@ -93,7 +93,7 @@ const CreateReview = ({ portfolio, pageData, global, code }) => {
       try {
         const response = await fetch('http://localhost:1337/api/reviews', {
           method: 'POST',
-          headers,
+          'Content-Type': 'application/json',
           body: JSON.stringify({ data: modifiedData }),
         })
           .then(checkStatus)
@@ -138,12 +138,12 @@ const CreateReview = ({ portfolio, pageData, global, code }) => {
                 <input className={`${styles.inputForm} ${styles.nameInput}`} type="text" name="code" value={code} onChange={handleChange} required disabled />
 
                 <label className={styles.labelForm} for="#">{page.nameLabel}</label>
-                <input className={`${styles.inputForm} ${styles.nameInput}`} type="text" name="name" placeholder={page.namePlaceholder} required></input>
+                <input className={`${styles.inputForm} ${styles.nameInput}`} type="text" name="name" onChange={handleChange} placeholder={page.namePlaceholder} required></input>
 
                 <label className={styles.labelForm} for="#">{page.orgLabel}</label>
-                <input className={`${styles.inputForm} ${styles.mailInput}`} type="text" placeholder={`“${page.orgPlaceholder}”`}></input>
+                <input className={`${styles.inputForm} ${styles.mailInput}`} type="text" placeholder={`“${page.orgPlaceholder}”`} onChange={handleChange}></input>
 
-                <label className={styles.labelForm} for="#">{page.phoneLabel}</label>
+                {/*<label className={styles.labelForm} for="#">{page.phoneLabel}</label>
                 <input className={`${styles.inputForm} ${styles.phoneInput} ${styles.artStranger}`} type="tel" placeholder={page.phonePlaceholder}></input>
 
                 <label className={styles.labelForm} for="#">{page.emailLabel}</label>
@@ -159,7 +159,7 @@ const CreateReview = ({ portfolio, pageData, global, code }) => {
                       <option key={id} value={type}>{connectTypeLabel}</option>
                     ))}
                   </select>
-                </div>
+                </div>*/}
 
                 <label className={`${styles.labelForm} ${styles.descriptionInput}`} for="#">{page.textLabel}</label>
                 <textarea name="descriptionForm" className={styles.descriptionForm} rows="5" placeholder={page.textPlaceholder}></textarea>
@@ -168,7 +168,6 @@ const CreateReview = ({ portfolio, pageData, global, code }) => {
                   <input className={styles.boxConf} id="box1" type="checkbox"></input>
                   <label className={styles.labelBoxConf} for="box1">Согласен с <a href="#">политикой конфиденциальности</a></label>
                 </div>
-
                 <div className={styles.checkboxPerm}>
                   <input className={styles.boxPerm} id="box2" type="checkbox"></input>
                   <label className={styles.labelBoxPerm} for="box2">Даю свое разрешение на публикацию отзыва на сайте</label>

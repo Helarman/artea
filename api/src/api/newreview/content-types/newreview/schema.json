@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newreviews",
+  "info": {
+    "singularName": "newreview",
+    "pluralName": "newreviews",
+    "displayName": "newreview"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
