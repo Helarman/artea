@@ -1,17 +1,20 @@
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+
 import Head from 'next/head';
 import NavbarSecondary from '@/components/Navbar/NavbarSecondary';
 import HeaderSecondary from '@/components/Header/HeaderSecondary'
 import Footer from '@/components/Footer/Footer'
 import ReviewsList from '@/components/Reviews/ReviewsList';
-import { useRouter } from 'next/router';
-import styles from '@/components/Reviews/ReviewsList.module.scss'
 import Error from '@/components/Error/Error';
+
+import styles from '@/components/Reviews/ReviewsList.module.scss'
 
 
 
 export const getServerSideProps = async ({ query }) => {
     const { page = 1 } = query; //default page
-    const { size = 12    } = query; //default items quantity per page
+    const { size = 12 } = query; //default items quantity per page
 
     const start = +page === 1 ? 0 : (+page) //default page for request
     const def = +size === 1 ? 0 : (+size) //default items quantity per page for request
@@ -27,7 +30,7 @@ export const getServerSideProps = async ({ query }) => {
         res2.json(),
         res3.json()
     ])
-   
+
     return {
         props: { global: data1, reviews: data2, pageData: data3, page: +page, size: +size },
 
@@ -35,11 +38,14 @@ export const getServerSideProps = async ({ query }) => {
 };
 
 const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
-
     const router = useRouter();
 
     const title = pageData.data.attributes.title; //header title
     const background = pageData.data.attributes.background.data.attributes; //header background
+
+    const pageSizes = pageData.data.attributes.pageSizes;// all page sizes
+    const firstSize = pageSizes[0].pageSize; //only first size
+    const withoutFirst = pageSizes.filter(pageSizes => pageSizes.id > 1) //without first
 
     const pagination = reviews.meta.pagination; //all pagination data
     const pageQuantity = reviews.meta.pagination.pageCount; //page quantity
@@ -53,15 +59,21 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
     const hidePagination = pageQuantity === 1;
 
     const hidePrevDots = page > 2;
-    const hideNextDots = afterNextPage < pageQuantity; 
+    const hideNextDots = afterNextPage < pageQuantity;
 
-    const hidePrevArrow = page > 1; 
-    const hideNextArrow = nextPage <= pageQuantity; 
-    const hideFirst = previousPage === 0; 
+    const hidePrevArrow = page > 1;
+    const hideNextArrow = nextPage <= pageQuantity;
+    const hideFirst = previousPage === 0;
     const hidePreLast = nextPage <= pageQuantity;
     const hideLast = afterNextPage <= pageQuantity;
     const itsLast = page === pageQuantity;
     const itsSecond = beforePreviousPage === 0;
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen)
+    }
 
     if (page < 1) {
         return (
@@ -90,14 +102,22 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
             </Head>
             <NavbarSecondary global={global} />
             <HeaderSecondary title={title} background={background} />
-
-                <ul>
-                    <p>current:{size}</p>
-                    <a onClick={() => router.push(`/reviews??page=1&size=1`)}>1</a><br></br>
-                    <a onClick={() => router.push(`/reviews?page=1&size=2`)}>2</a><br></br>
-                    <a onClick={() => router.push(`/reviews?page=1&size=6`)}>6</a><br></br>
-                    <a onClick={() => router.push(`/reviews?page=1&size=12`)}>12</a>
-                </ul>
+            <div className={`container`}>
+                <div className={`row justify-content-end`}>
+                    <div className={`col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12`}>
+                        <div className={styles.dropdown}>
+                            <p>Колличество на странице:</p>
+                            <button onClick={toggleDropdown} className={styles.dropbtn}>{`${dropdownOpen ? `${firstSize}` : `${size}`}`}</button>
+                            <div id="menuDropdown" className={`${styles.dropdownContent} ${dropdownOpen ? `${styles.show}` : ""}`}>
+                                {withoutFirst.map(({ id, pageSize }) => (
+                                    <a key={id} onClick={() => router.push(`/reviews?page=1&size=${pageSize}`)}>{pageSize}</a>
+                                ))}
+                                <a onClick={() => router.push(`/reviews?page=1&size=${total}`)}>Все</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <ReviewsList reviews={reviews} />
 

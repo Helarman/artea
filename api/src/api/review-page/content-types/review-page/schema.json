@@ -84,13 +84,17 @@
       "repeatable": true,
       "component": "form.checkbox"
     },
-    "connectionType": {
-      "type": "string",
-      "required": true
-    },
     "connect": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "connectionType": {
+      "type": "string"
+    },
+    "pageSizes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "reviews.page-sizes"
     }
   }
 }

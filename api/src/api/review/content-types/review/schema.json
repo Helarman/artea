@@ -31,7 +31,7 @@
     "code": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "connectionType": {
       "type": "string",

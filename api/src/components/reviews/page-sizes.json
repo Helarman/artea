@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_reviews_page_sizes",
+  "info": {
+    "displayName": "pageSizes"
+  },
+  "options": {},
+  "attributes": {
+    "pageSize": {
+      "type": "integer"
+    }
+  }
+}
