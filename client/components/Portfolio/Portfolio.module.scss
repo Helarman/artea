@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "FuturaBookC";
+    src: url("../../src/fonts/FuturaBookC.woff") format("woff"), url("../../src/fonts/FuturaBookC.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FuturaMediumC";
+    src: url("../../src/fonts/FuturaMediumC.woff") format("woff"), url("../../src/fonts/FuturaMediumC.eot") format("eot");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 .sectionTitle {
     margin-bottom: 90px;
 

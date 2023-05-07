@@ -11,7 +11,7 @@ const Questions = () => {
                         <p>Остались вопросы? Напишите нам!</p>
                     </div>
                     <div className={styles.questionsBtn}>
-                        <Link href={`/request`}>Связаться</Link>
+                        <Link href={`/contacts`}>Связаться</Link>
                     </div>
                 </div>
             </div>

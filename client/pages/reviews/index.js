@@ -49,8 +49,8 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
     const background = pageData.data.attributes.background.data.attributes; //header background
 
     const pageSizes = pageData.data.attributes.pageSizes;// all page sizes
-    const firstSize = pageSizes[0].pageSize; //only first size
-    const withoutFirst = pageSizes.filter(pageSizes => pageSizes.id > 1) //without first
+    //const firstSize = pageSizes[0].pageSize; //only first size
+    //const withoutFirst = pageSizes.filter(pageSizes => pageSizes.id > 1) //without first
 
     const pagination = reviews.meta.pagination; //all pagination data
     const pageQuantity = reviews.meta.pagination.pageCount; //page quantity
@@ -113,9 +113,9 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
                     <div className={`col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12`}>
                         <div className={styles.dropdown}>
                             <p>Колличество на странице:</p>
-                            <button onClick={toggleDropdown} className={styles.dropbtn}>{`${dropdownOpen ? `${firstSize}` : `${size}`}`}</button>
+                            <button onClick={toggleDropdown} className={styles.dropbtn}>{`${dropdownOpen ? `^` : `${size}`}`}</button>
                             <div id="menuDropdown" className={`${styles.dropdownContent} ${dropdownOpen ? `${styles.show}` : ""}`}>
-                                {withoutFirst.map(({ id, pageSize }) => (
+                                {pageSizes.map(({ id, pageSize }) => (
                                     <a key={id} onClick={() => router.push(`/reviews?page=1&size=${pageSize}`)}>{pageSize}</a>
                                 ))}
                                 <a onClick={() => router.push(`/reviews?page=1&size=${total}`)}>Все</a>

@@ -15,8 +15,6 @@ const Add = ({ qCode, global, pageData, portfolio, usedData }) => {
   const codeInclude = existigCodes.includes(`${qCode}`);// check code usage
 
 
-  console.log(existigCodes)
-
   if (!uuidInclude) {
     return (
       <Error //localization needed

@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "FuturaBookC";
+    src: url("../../src/fonts/FuturaBookC.woff") format("woff"), url("../../src/fonts/FuturaBookC.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FuturaMediumC";
+    src: url("../../src/fonts/FuturaMediumC.woff") format("woff"), url("../../src/fonts/FuturaMediumC.eot") format("eot");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 .menuRequest {
     background-color: #2a2a2a;
     padding-bottom: 37px;
@@ -152,4 +168,79 @@
         background-color: #2a2a2a;
         color: white;
     }
+}
+
+.requestContacts{
+	margin-top: 50px;
+	margin-bottom: 25px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.mailContacts, .phoneContacts, .vkContacts, .tgContacts, .waContacts{
+	cursor: pointer;
+	margin-bottom: 8px;
+	&:hover a{
+		color: #898989;
+	}
+	svg{
+		margin-top: -11px;
+	}
+	a{
+		position: relative;
+		margin-left: 5px;
+		display: inline-block;
+		text-decoration: none;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 23px;
+		line-height: 125.5%;
+		color: #2A2A2A;
+		margin-bottom: 0;
+		transition: all .2s;
+}
+svg:hover #vk, svg:hover #tg, svg:hover #wa, svg:hover #mail, svg:hover #phone {
+transition: 0.2s;
+transition-timing-function: ease-in-out; 
+  fill: #898989;
+}
+}
+
+.phoneContacts{
+	margin-bottom: 5px;
+}
+.mailContacts{
+	svg{
+		margin-top: -9px;
+	}
+}
+.vkContacts{
+	svg{
+		margin-top: -5px;
+	}
+}
+.vkContacts:hover #vk{
+	transition: 0.2s;
+	transition-timing-function: ease-in-out; 
+	fill: #898989;
+}
+.tgContacts:hover #tg{
+	transition: 0.2s;
+	transition-timing-function: ease-in-out; 
+	fill: #898989;
+}
+.waContacts:hover #wa{
+	transition: 0.2s;
+	transition-timing-function: ease-in-out; 
+	fill: #898989;
+}
+.mailContacts:hover #mail{
+	transition: 0.2s;
+	transition-timing-function: ease-in-out; 
+	fill: #898989;
+}
+.phoneContacts:hover #phone{
+	transition: 0.2s;
+	transition-timing-function: ease-in-out; 
+	fill: #898989;
 }
