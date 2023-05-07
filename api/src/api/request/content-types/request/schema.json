@@ -32,10 +32,6 @@
       "type": "string",
       "required": true
     },
-    "selectLabel": {
-      "type": "string",
-      "required": true
-    },
     "smallDescriptionLabel": {
       "type": "string",
       "required": true
@@ -51,6 +47,45 @@
     "phoneLabel": {
       "type": "string",
       "required": true
+    },
+    "connectType": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.connect-type"
+    },
+    "emailLabel": {
+      "type": "string"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.socia-links"
+    },
+    "socialLabels": {
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.social-labels"
+    },
+    "phoneNumLabel": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phoneNum": {
+      "type": "string"
+    },
+    "connectTypeLabel": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string"
+    },
+    "orgLabel": {
+      "type": "string"
+    },
+    "orgPlaceholder": {
+      "type": "string"
     }
   }
 }

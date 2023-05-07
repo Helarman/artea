@@ -169,7 +169,6 @@
         color: white;
     }
 }
-
 .requestContacts{
 	margin-top: 50px;
 	margin-bottom: 25px;
@@ -184,6 +183,7 @@
 		color: #898989;
 	}
 	svg{
+        fill: #2A2A2A;
 		margin-top: -11px;
 	}
 	a{
@@ -198,12 +198,12 @@
 		color: #2A2A2A;
 		margin-bottom: 0;
 		transition: all .2s;
-}
-svg:hover #vk, svg:hover #tg, svg:hover #wa, svg:hover #mail, svg:hover #phone {
-transition: 0.2s;
-transition-timing-function: ease-in-out; 
-  fill: #898989;
-}
+    }
+    svg:hover #vk, svg:hover #tg, svg:hover #wa, svg:hover #mail, svg:hover #phone {
+    transition: 0.2s;
+    transition-timing-function: ease-in-out; 
+    fill: #898989;
+    }
 }
 
 .phoneContacts{
@@ -219,27 +219,27 @@ transition-timing-function: ease-in-out;
 		margin-top: -5px;
 	}
 }
-.vkContacts:hover #vk{
+.vkContacts:hover .hover{
 	transition: 0.2s;
 	transition-timing-function: ease-in-out; 
 	fill: #898989;
 }
-.tgContacts:hover #tg{
+.tgContacts:hover .hover{
 	transition: 0.2s;
 	transition-timing-function: ease-in-out; 
 	fill: #898989;
 }
-.waContacts:hover #wa{
+.waContacts:hover .hover{
 	transition: 0.2s;
 	transition-timing-function: ease-in-out; 
 	fill: #898989;
 }
-.mailContacts:hover #mail{
+.mailContacts:hover .hover{
 	transition: 0.2s;
 	transition-timing-function: ease-in-out; 
 	fill: #898989;
 }
-.phoneContacts:hover #phone{
+.phoneContacts:hover .hover{
 	transition: 0.2s;
 	transition-timing-function: ease-in-out; 
 	fill: #898989;

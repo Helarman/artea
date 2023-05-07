@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_footer_social_labels",
+  "info": {
+    "displayName": "socialLabels"
+  },
+  "options": {},
+  "attributes": {
+    "vkLabel": {
+      "type": "string"
+    },
+    "tgLabel": {
+      "type": "string"
+    },
+    "waLabel": {
+      "type": "string"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import styles from './Request.module.scss'
 import classnames from 'classnames'
+import { useState } from 'react'
 
 const Arrow = () => {
 	return (
@@ -14,40 +15,92 @@ const RequestForm = ({ request }) => {
 	const namePlaceholder = request.data.attributes.namePlaceholder;
 	const phoneLabel = request.data.attributes.phoneLabel;
 	const phonePlaceholder = request.data.attributes.phonePlaceholder;
+	const emailLabel = request.data.attributes.emailLabel;
+	const emailPlaceholder = request.data.attributes.emailPlaceholder;
 	const selectLabel = request.data.attributes.selectLabel;
-	const smallDesctiptionLabel = request.data.attributes.smallDesctiptionLabel;
-	const smallDesctiptionPlaceholder = request.data.attributes.smallDesctiptionPlaceholder;
+	const textLabel = request.data.attributes.smallDescriptionLabel;
+	const textPlaceholder = request.data.attributes.smallDescriptionPlaceholder;
 	const recipient = request.data.attributes.recipient;
+	const connectType = request.data.attributes.connectType;
+	const connectTypeLabel = request.data.attributes.connectTypeLabel;
+	const orgPlaceholder = request.data.attributes.orgPlaceholder;
+	const orgLabel = request.data.attributes.orgLabel;
+	console.log(request.data.attributes.emailLabel)
 
-	console.log(request.data.attributes);
+	const [name, setName] = useState('');
+	const [organization, setOrganization] = useState('');
+	const [text, setText] = useState('');
+	const [connectionType, setConnectionType] = useState('email');
+	const [connect, setConnect] = useState('');
+
+	const handleName = e => { setName(e.target.value); }
+	const handleOrganization = e => { setOrganization(e.target.value); }
+	const handleText = e => { setText(e.target.value); }
+	const handleConnectionType = e => { setConnectionType(e.target.value); }
+	const handleConnect = e => { setConnect(e.target.value); }
+
+	const handleSubmit = async e => {
+
+		timer(5, "/contacts/success");
+
+	};
 
 	return (
 		<div className={`col-xl-5`}>
 			<div className={styles.requestForm}>
-				<form action="#">
-					<label className={styles.labelForm} >{nameLabel}</label>
-					<input className={classnames(styles.inputForm, styles.nameInput)} type="text" placeholder={namePlaceholder}></input>
-
-					<label className={styles.labelForm} >{phoneLabel}</label>
-					<input className={classnames(styles.inputForm, styles.phoneInput, styles.artStranger)} type="tel" placeholder={phonePlaceholder}></input>
-
-					<label className={styles.labelForm} >{selectLabel}</label>
+				<form onSubmit={handleSubmit}>
+					<label className={styles.labelForm}>{nameLabel}</label>
+					<input className={`${styles.inputForm} ${styles.nameInput}`} type="text" name="name" placeholder={namePlaceholder} value={name} onChange={handleName} required />
+					<label className={styles.labelForm}>{orgLabel}</label>
+					<input className={`${styles.inputForm} ${styles.nameInput}`} type="text" name="organization" placeholder={`“${orgPlaceholder}”`} value={organization} onChange={handleOrganization} />
+					<label className={styles.labelForm}>{connectTypeLabel}</label>
 					<div className={styles.requestSelect}>
 						<div className={styles.selectArrow}>
 							<Arrow />
 						</div>
-
-						<select className={styles.connectForm} name="connect-form">
-							<option value="num">По номеру телефона</option>
-							<option value="tg">Telegram</option>
-							<option value="wa">WhatsApp</option>
+						<select className={styles.connectForm} name="connectionType" value={connectionType} onChange={handleConnectionType}>
+							{connectType.map(({ id, connectTypeLabel, type }) => (
+								<option key={id} value={type}>{connectTypeLabel}</option>
+							))}
 						</select>
 					</div>
+					<label className={styles.labelForm}>
+						{(() => {
+							switch (connectionType) {
+								case "email": return `${emailLabel}`;
+								case "phone": return `${phoneLabel}`;
+								case "tg": return `${phoneLabel}`;
+								case "wa": return `${phoneLabel}`;
+							}
+						})()}:</label>
+					<input className={`${styles.inputForm} ${styles.nameInput}`} type={(() => {
+						switch (connectionType) {
+							case "email": return `email`;
+							case "phone": return `tel`;
+							case "tg": return `tel`;
+							case "wa": return `tel`;
+						}
+					})()} name="connect" value={connect} onChange={handleConnect} placeholder={(() => {
+						switch (connectionType) {
+							case "email": return `${emailPlaceholder}`;
+							case "phone": return `${phonePlaceholder}`;
+							case "tg": return `${phonePlaceholder}`;
+							case "wa": return `${phonePlaceholder}`;
+						}
+					})()} />
 
-					<label className={classnames(styles.labelForm, styles.descriptionInput)} >Краткое описание задачи</label>
-					<textarea name="descriptionForm" className={styles.descriptionForm} rows="5" placeholder="Например: необходим сайт-визитка адвоката"></textarea>
+					<label className={`${styles.labelForm} ${styles.descriptionInput}`}>{textLabel}</label>
+					<textarea
+						className={styles.descriptionForm}
+						rows="5"
+						placeholder={textPlaceholder}
+						type="text"
+						name="text"
+						value={text} onChange={handleText}
+					/>
 
-					<button className={styles.buttonForm} type="submit">Отправить</button>
+
+					<button className={styles.buttonForm} type="submit">Submit</button>
 				</form>
 			</div>
 		</div>

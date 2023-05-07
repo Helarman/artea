@@ -64,6 +64,12 @@
     "thirdColumnTitle": {
       "type": "string",
       "required": true
+    },
+    "socialLabels": {
+      "displayName": "socialLabels",
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.social-labels"
     }
   }
 }
