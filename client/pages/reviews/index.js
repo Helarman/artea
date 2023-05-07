@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 import Head from 'next/head';
 import NavbarSecondary from '@/components/Navbar/NavbarSecondary';
@@ -38,6 +39,10 @@ export const getServerSideProps = async ({ query }) => {
 };
 
 const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const router = useRouter();
 
     const title = pageData.data.attributes.title; //header title
@@ -102,6 +107,7 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
             </Head>
             <NavbarSecondary global={global} />
             <HeaderSecondary title={title} background={background} />
+            
             <div className={`container`}>
                 <div className={`row justify-content-end`}>
                     <div className={`col-lg-4 col-xl-4 col-md-6 col-sm-12 col-12`}>
@@ -120,36 +126,40 @@ const ReviewsPage = ({ global, reviews, pageData, page, size }) => {
             </div>
 
             <ReviewsList reviews={reviews} />
+            
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <div id="pagination" className={` ${hidePagination ? `${styles.none}` : `${styles.navigation}`}`}>
+                    <div className={` ${hidePrevArrow ? `${styles.leftArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hidePrevArrow) { router.push(`/reviews?page=${page - 1}&size=${size}`) } }}>
+                        <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.646446 4.35355C0.451185 4.15829 0.451185 3.84171 0.646446 3.64645L3.82843 0.464466C4.02369 0.269204 4.34027 0.269204 4.53553 0.464466C4.7308 0.659728 4.7308 0.976311 4.53553 1.17157L1.70711 4L4.53553 6.82843C4.7308 7.02369 4.7308 7.34027 4.53553 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646446 4.35355ZM30 4.5H1V3.5H30V4.5Z" fill="#2A2A2A" />
+                        </svg>
+                    </div>
+                    <div className={styles.pageNumbers}>
+                        <ul>
 
-            <div id="pagination" className={` ${hidePagination ? `${styles.none}` : `${styles.navigation}`}`}>
-                <div className={` ${hidePrevArrow ? `${styles.leftArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hidePrevArrow) { router.push(`/reviews?page=${page - 1}&size=${size}`) } }}>
-                    <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.646446 4.35355C0.451185 4.15829 0.451185 3.84171 0.646446 3.64645L3.82843 0.464466C4.02369 0.269204 4.34027 0.269204 4.53553 0.464466C4.7308 0.659728 4.7308 0.976311 4.53553 1.17157L1.70711 4L4.53553 6.82843C4.7308 7.02369 4.7308 7.34027 4.53553 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646446 4.35355ZM30 4.5H1V3.5H30V4.5Z" fill="#2A2A2A" />
-                    </svg>
+                            <p className={` ${hidePrevDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
+                            <a className={` ${itsLast && !itsSecond ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page - 2}&size=${size}`)}>{page - 2}</a>
+                            <a className={` ${hideFirst ? `${styles.none}` : `${styles.inline}`}`} onClick={() => router.push(`/reviews?page=${page - 1}&size=${size}`)}>{page - 1}</a>
+                            <a className={styles.pageActive}>{page}</a>
+                            <a className={` ${hidePreLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 1}&size=${size}`)}>{page + 1}</a>
+                            <a className={` ${hideLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 2}&size=${size}`)}>{page + 2}</a>
+                            <p className={` ${hideNextDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
+                        </ul>
+                    </div>
+
+
+                    <div className={` ${hideNextArrow ? `${styles.rightArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hideNextArrow) { router.push(`/reviews?page=${page + 1}&size=${size}  `) } }}
+                        disabled={page <= 1}>
+                        <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.3536 4.35355C29.5488 4.15829 29.5488 3.84171 29.3536 3.64645L26.1716 0.464466C25.9763 0.269204 25.6597 0.269204 25.4645 0.464466C25.2692 0.659728 25.2692 0.976311 25.4645 1.17157L28.2929 4L25.4645 6.82843C25.2692 7.02369 25.2692 7.34027 25.4645 7.53553C25.6597 7.7308 25.9763 7.7308 26.1716 7.53553L29.3536 4.35355ZM0 4.5H29V3.5H0V4.5Z" fill="#2A2A2A" />
+                        </svg>
+                    </div>
                 </div>
-                <div className={styles.pageNumbers}>
-                    <ul>
-
-                        <p className={` ${hidePrevDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
-                        <a className={` ${itsLast && !itsSecond ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page - 2}&size=${size}`)}>{page - 2}</a>
-                        <a className={` ${hideFirst ? `${styles.none}` : `${styles.inline}`}`} onClick={() => router.push(`/reviews?page=${page - 1}&size=${size}`)}>{page - 1}</a>
-                        <a className={styles.pageActive}>{page}</a>
-                        <a className={` ${hidePreLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 1}&size=${size}`)}>{page + 1}</a>
-                        <a className={` ${hideLast ? `${styles.inline}` : `${styles.none}`}`} onClick={() => router.push(`/reviews?page=${page + 2}&size=${size}`)}>{page + 2}</a>
-                        <p className={` ${hideNextDots ? `${styles.inline}` : `${styles.none}`}`}>...</p>
-                    </ul>
-                </div>
-
-
-                <div className={` ${hideNextArrow ? `${styles.rightArrow}` : `${styles.nonActiveArrow}`}`} onClick={function () { if (hideNextArrow) { router.push(`/reviews?page=${page + 1}&size=${size}  `) } }}
-                    disabled={page <= 1}>
-                    <svg width="30" height="8" viewBox="0 0 30 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M29.3536 4.35355C29.5488 4.15829 29.5488 3.84171 29.3536 3.64645L26.1716 0.464466C25.9763 0.269204 25.6597 0.269204 25.4645 0.464466C25.2692 0.659728 25.2692 0.976311 25.4645 1.17157L28.2929 4L25.4645 6.82843C25.2692 7.02369 25.2692 7.34027 25.4645 7.53553C25.6597 7.7308 25.9763 7.7308 26.1716 7.53553L29.3536 4.35355ZM0 4.5H29V3.5H0V4.5Z" fill="#2A2A2A" />
-                    </svg>
-                </div>
-            </div>
-
-            <Footer global={global} />
+            </AnimationOnScroll>
+            
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Footer global={global} />
+            </AnimationOnScroll>
         </div>
     )
 

@@ -1,10 +1,14 @@
+import { useEffect } from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+import Head from "next/head";
+
 import NavbarSecondary from "@/components/Navbar/NavbarSecondary";
 import HeaderSecondary from '@/components/Header/HeaderSecondary'
 import Description from "@/components/Description/Description";
 import ServicesTabs from "@/components/Services/ServicesTabs";
 import Questions from "@/components/Questions/Questions";
 import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
 
 export const getStaticProps = async () => {
     const [res1, res2, res3] = await Promise.all([
@@ -26,6 +30,10 @@ export const getStaticProps = async () => {
 };
 
 const Services = ({ global, page, services }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const title = page.data.attributes.title;
     const background = page.data.attributes.background.data.attributes;
     const descriptionTitle = page.data.attributes.descriptionTitle;
@@ -39,12 +47,24 @@ const Services = ({ global, page, services }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
             <NavbarSecondary global={global} />
+
             <HeaderSecondary title={title} background={background} />
+
             <Description descriptionTitle={descriptionTitle} description={description} />
-            <ServicesTabs services={services.data} />
-            <Questions />
-            <Footer global={global} />
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <ServicesTabs services={services.data} />
+            </AnimationOnScroll>
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Questions />
+            </AnimationOnScroll>
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Footer global={global} />
+            </AnimationOnScroll>
         </>
     )
 };

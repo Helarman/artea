@@ -1,10 +1,13 @@
 import bootstrap from "../src/css/bootstrap.css"
-import animate from "../src/css/animate.css"
+import "animate.css/animate.min.css";
+
 
 const App = ({ Component, pageProps }) => {
 
   return (
+    <>
         <Component  {...pageProps} />
+    </>
   );
 }
 

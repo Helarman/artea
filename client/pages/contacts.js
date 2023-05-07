@@ -1,4 +1,7 @@
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 import Head from 'next/head'
+
 import Link from 'next/link'
 import Footer from '@/components/Footer/Footer';
 import RequestForm from '@/components/Request/RequestForm';
@@ -22,7 +25,7 @@ export const getStaticProps = async () => {
   }
 };
 
-const Request = ({ global, request }) => {
+const Contacts = ({ global, request }) => {
 
 
   return (
@@ -40,9 +43,12 @@ const Request = ({ global, request }) => {
           <RequestForm request={request} />
         </div>
       </div>
-      <Footer global={global} />
+
+      <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+        <Footer global={global} />
+      </AnimationOnScroll>
     </div>
   )
 }
 
-export default Request;
+export default Contacts;

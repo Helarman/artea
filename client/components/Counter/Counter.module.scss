@@ -55,6 +55,9 @@
             li {
                 width: 40%;
                 margin-bottom: 20px;
+                &:nth-child(even){
+                    margin-left: 60px;
+                } 
             }
         }
     }

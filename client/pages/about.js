@@ -1,3 +1,8 @@
+import { useState, useEffect } from "react";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+
+import Head from "next/head";
+
 import NavbarSecondary from "@/components/Navbar/NavbarSecondary";
 import HeaderSecondary from "@/components/Header/HeaderSecondary"
 import Description from "@/components/Description/Description";
@@ -5,7 +10,7 @@ import Counters from "@/components/Counter/Counters";
 import StagesNumber from "@/components/Stages/StagesNumber";
 import Questions from "@/components/Questions/Questions";
 import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
+
 
 
 export const getStaticProps = async () => {
@@ -34,6 +39,12 @@ const About = ({ global, page }) => {
     const counters = page.data.attributes.counter;
     const steps = page.data.attributes.step;
 
+    const Content = page.data.attributes;
+    const Services = page.data.attributes.serviceCard;
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <>
@@ -43,13 +54,36 @@ const About = ({ global, page }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
             <NavbarSecondary global={global} />
+
             <HeaderSecondary title={title} background={background} />
+
             <Description descriptionTitle={descriptionTitle} description={description} />
-            <Counters counters={counters} />
-            <StagesNumber steps={steps} />
-            <Questions />
-            <Footer global={global} />
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Counters counters={counters} />
+            </AnimationOnScroll>
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <StagesNumber steps={steps} />
+            </AnimationOnScroll>
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Questions />
+            </AnimationOnScroll>
+
+            <AnimationOnScroll animateIn="animate__fadeIn" animateOnce="true">
+                <Footer global={global} />
+            </AnimationOnScroll>
+            <style jsx>{`
+            .inline{
+                display: inline;
+            }
+            .none {
+                display: none;
+            }
+            `}</style>
         </>
     )
 };
