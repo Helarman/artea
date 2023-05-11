@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@editorjs/editorjs": "^2.26.5",
+    "@editorjs/header": "^2.7.0",
+    "@editorjs/list": "^1.8.0",
+    "@editorjs/paragraph": "^2.9.0",
     "animate.css": "^4.1.1",
     "classnames": "^2.3.2",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "18.2.0",
+    "react-editor-js": "^2.1.0",
     "react-instantsearch-dom": "^6.39.1",
     "react-intersection-observer": "^9.4.3",
     "react-query": "^3.39.3",

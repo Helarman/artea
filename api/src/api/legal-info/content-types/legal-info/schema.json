@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "legal_infos",
+  "info": {
+    "singularName": "legal-info",
+    "pluralName": "legal-infos",
+    "displayName": "Legal info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "privacy": {
+      "type": "richtext"
+    },
+    "privacyText": {
+      "type": "text"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from '@/components/Reviews/feedbackform.module.scss'
+import Link from 'next/link';
 
 const RequestArrow = () => {
     return (
@@ -100,14 +101,14 @@ const NewReview = ({ inCode, page }) => {
                             case "wa": return `${page.phoneLabel}`;
                         }
                     })()}:</label>
-                <input className={`${styles.inputForm} ${styles.nameInput}`} type= {(() => {
-                        switch (connectionType) {
-                            case "email": return `email`;
-                            case "phone": return `tel`;
-                            case "tg": return `tel`;
-                            case "wa": return `tel`;
-                        }
-                    })()} name="connect" value={connect} onChange={handleConnect} placeholder={(() => {
+                <input className={`${styles.inputForm} ${styles.nameInput}`} type={(() => {
+                    switch (connectionType) {
+                        case "email": return `email`;
+                        case "phone": return `tel`;
+                        case "tg": return `tel`;
+                        case "wa": return `tel`;
+                    }
+                })()} name="connect" value={connect} onChange={handleConnect} placeholder={(() => {
                     switch (connectionType) {
                         case "email": return `${page.emailPlaceholder}`;
                         case "phone": return `${page.phonePlaceholder}`;
@@ -126,8 +127,17 @@ const NewReview = ({ inCode, page }) => {
                     value={text} onChange={handleText}
                 />
 
+                <div className={styles.checkboxConf}>
+                    <input className={styles.boxConf} id="box1" type="checkbox" required></input>
+                    <label className={styles.labelBoxConf} for="box1">Согласен с <Link target="_blank" href="/privacy">политикой конфиденциальности</Link></label>
+                </div>
 
-                <button className={styles.buttonForm} type="submit">Submit</button>
+                <div className={styles.checkboxPerm}>
+                    <input className={styles.boxPerm} id="box2" type="checkbox" required></input>
+                    <label className={styles.labelBoxPerm} for="box2">Даю свое разрешение на публикацию отзыва на сайте</label>
+                </div>
+
+                <button className={styles.buttonForm} type="submit">Отправить</button>
             </form>
         </div>
 
